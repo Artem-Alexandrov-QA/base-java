@@ -6,4 +6,7 @@ public class ZenitPlayer extends FootballPlayer{
     void sayHeight () {
         System.out.println("Меня зовут " +name+" и у меня рост 180см");
     }
+    public void workLeg() {
+        System.out.println("Рабочая нога:Правая");
+    }
 }

@@ -1,19 +1,11 @@
-public class FootballPlayer {
+public abstract class FootballPlayer {
     protected String name;
     protected int age;
     protected String position;
     int countMatchToSeason;
     protected static String country = "Россия";
+    protected static String city = "Москва";
 
-    public void setPosition(String position) {
-        this.position = position;
-    }
-    public static String getCountry() {
-        return country;
-    }
-    public static void setCountry(String country) {
-        FootballPlayer.country = country;
-    }
     public FootballPlayer(int countMatchToSeason) {
         this.countMatchToSeason = countMatchToSeason;
     }
@@ -21,7 +13,13 @@ public class FootballPlayer {
     public FootballPlayer(String name) {
         this.name = name;
     }
-    static void sayCountry(){
+    public static void sayCountry(){
         System.out.println(country);
     }
+
+    public void sayCity(){
+        System.out.println(city);
+    }
+
+    public abstract void workLeg();
 }
