@@ -1,0 +1,9 @@
+public class ZenitPlayer extends FootballPlayer{
+
+    public ZenitPlayer(String name) {
+        super(name);
+    }
+    void sayHeight () {
+        System.out.println("Меня зовут " +name+" и у меня рост 180см");
+    }
+}
