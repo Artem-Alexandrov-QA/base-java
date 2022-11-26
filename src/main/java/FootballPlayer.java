@@ -13,11 +13,12 @@ public abstract class FootballPlayer {
     public FootballPlayer(String name) {
         this.name = name;
     }
-    public static void sayCountry(){
+
+    public static void sayCountry() {
         System.out.println(country);
     }
 
-    public void sayCity(){
+    public void sayCity() {
         System.out.println(city);
     }
 
