@@ -1,25 +1,25 @@
 public class DinamoPlayer extends FootballPlayer {
 
-    String city = "Самара";
+    private static final String CITY = "Самара";
+    private static final String CLUB = "Динамо";
 
-    public DinamoPlayer(int countMatchToSeason) {
-        super(countMatchToSeason);
-    }
-
-    public DinamoPlayer(String name) {
-        super(name);
-    }
-
-    void sayHeight() {
+    @Override
+    public void sayHeight() {
         System.out.println("Меня зовут " + name + " и у меня рост 170 см");
     }
 
     @Override
-    public void sayCity() {
-        System.out.println(city);
+    public void sayClub() {
+        System.out.println("Клуб: " + CLUB);
     }
 
+    @Override
+    public void sayCity() {
+        System.out.println("Город: " + CITY);
+    }
+
+    @Override
     public void workLeg() {
-        System.out.println("Рабочая нога:Правая");
+        System.out.println("Рабочая нога: Правая");
     }
 }

@@ -1,26 +1,51 @@
 public abstract class FootballPlayer {
+
     protected String name;
     protected int age;
     protected String position;
-    int countMatchToSeason;
+    protected int countMatchToSeason;
     protected static String country = "Россия";
     protected static String city = "Москва";
 
-    public FootballPlayer(int countMatchToSeason) {
-        this.countMatchToSeason = countMatchToSeason;
-    }
-
-    public FootballPlayer(String name) {
-        this.name = name;
-    }
-
     public static void sayCountry() {
-        System.out.println(country);
+        System.out.println("Страна: " + country);
     }
 
     public void sayCity() {
-        System.out.println(city);
+        System.out.println("Город: " + city);
     }
 
     public abstract void workLeg();
+
+    public abstract void sayHeight();
+
+    public abstract void sayClub();
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getCountMatchToSeason() {
+        return countMatchToSeason;
+    }
+
+    public void setCountMatchToSeason(int countMatchToSeason) {
+        this.countMatchToSeason = countMatchToSeason;
+    }
 }

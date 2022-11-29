@@ -1,17 +1,20 @@
 public class SpartakPlayer extends FootballPlayer {
 
-    public SpartakPlayer(String name) {
-        super(name);
-    }
+    private static final String CLUB = "Спартак";
 
-    void sayHeight() {
+    @Override
+    public void sayHeight() {
         System.out.println("Меня зовут " + name + " и у меня рост 170 см");
     }
 
-    public void workLeg() {
-        System.out.println("Рабочая нога:Левая");
+    @Override
+    public void sayClub() {
+        System.out.println("Клуб: " + CLUB);
     }
 
-
+    @Override
+    public void workLeg() {
+        System.out.println("Рабочая нога: Левая");
+    }
 }
 

@@ -1,49 +1,36 @@
 public class Main {
 
-    static NationalTeam nationalTeam = new NationalTeam();
-
     public static void main(String[] args) {
 
-        SpartakPlayer spartak = new SpartakPlayer("Александр Соболев");
-        spartak.age = 24;
-        spartak.position = "Нападающий";
-        spartak.countMatchToSeason = 20;
-        FootballPlayer.sayCountry();
-        spartak.sayCity();
-        spartak.sayHeight();
-        System.out.println("Возраст:" + spartak.age);
-        System.out.println("Позиция:" + spartak.position);
-        spartak.workLeg();
-        System.out.println("Количество матчей в сезоне:" + spartak.countMatchToSeason);
-        nationalTeam.invitation(spartak);
+        SpartakPlayer spartakPlayer = new SpartakPlayer();
+        ZenitPlayer zenitPlayer = new ZenitPlayer();
+        DinamoPlayer dinamoPlayer = new DinamoPlayer();
 
-        ZenitPlayer zenit = new ZenitPlayer("Михаил Кержаков");
-        zenit.position = "Вратарь";
-        zenit.age = 26;
-        zenit.countMatchToSeason = 19;
-        FootballPlayer.sayCountry();
-        zenit.sayCity();
-        zenit.sayHeight();
-        System.out.println("Возраст:" + zenit.age);
-        System.out.println("Позиция:" + zenit.position);
-        zenit.workLeg();
-        System.out.println("Количество матчей в сезоне:" + zenit.countMatchToSeason);
-        nationalTeam.invitation(zenit);
-
-//      FootballPlayer dinamo = new DinamoPlayer("Антон Шунин");
-        DinamoPlayer dinamo = new DinamoPlayer("Антон Шунин");
-        dinamo.position = "Вратарь";
-        dinamo.age = 31;
-        dinamo.countMatchToSeason = 29;
-        FootballPlayer.sayCountry();
-        dinamo.sayCity();
-        dinamo.sayHeight();
-        System.out.println("Возраст:" + dinamo.age);
-        System.out.println("Позиция:" + dinamo.position);
-        dinamo.workLeg();
-        System.out.println("Количество матчей в сезоне:" + dinamo.countMatchToSeason);
-        nationalTeam.invitation(dinamo);
+        setPlayer(spartakPlayer, "Александр Соболев", "Нападающий", 24, 20);
+        setPlayer(zenitPlayer, "Михаил Кержаков", "Вратарь", 26, 19);
+        setPlayer(dinamoPlayer, "Антон Шунин", "Вратарь", 31, 29);
     }
 
+    private static <T extends FootballPlayer> void setPlayer(T team, String name, String position,
+                                                             Integer age, Integer countMatch) {
+        team.setName(name);
+        team.setPosition(position);
+        team.setAge(age);
+        team.setCountMatchToSeason(countMatch);
+        FootballPlayer.sayCountry();
+        team.sayCity();
+        team.sayHeight();
+        team.sayClub();
+        System.out.println("Возраст:" + team.getAge());
+        System.out.println("Позиция:" + team.getPosition());
+        team.workLeg();
+        System.out.println("Количество матчей в сезоне:" + team.getCountMatchToSeason());
+        System.out.println(invitation(team));
+    }
+
+    private static String invitation(FootballPlayer player) {
+        return (player.countMatchToSeason >= 20) ? "Вы приглашены, на ближайшие сборы национальной команды\n"
+                : "Извините,мы не готовы вас пригласить на сборы - нужно больше матчей за сезон\n";
+    }
 }
 
